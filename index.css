@@ -672,6 +672,97 @@ footer {
     to { transform: translate(20px, 40px); }
 }
 
+/* Before and After Cases */
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3rem;
+}
+
+.case-card {
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(18, 60, 52, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.case-badge {
+    align-self: flex-start;
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.comparison-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.comparison-image-wrapper {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: var(--bg-alt);
+    border: 1px solid rgba(18, 60, 52, 0.08);
+}
+
+.case-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.comparison-label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: 0.05em;
+    z-index: 5;
+}
+
+.label-before {
+    background: #64748b;
+}
+
+.label-after {
+    background: var(--secondary);
+}
+
+.blur-zone {
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    width: 70%;
+    height: 50%;
+    border-radius: 50%;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    background: rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+    z-index: 4;
+}
+
+.case-description {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-weight: 500;
+}
+
 /* Testimonials */
 .testimonials-grid {
     display: grid;
@@ -926,5 +1017,19 @@ footer {
 
     .testimonial-card {
         padding: 2rem 1.5rem;
+    }
+
+    /* Cases Mobile */
+    .cases-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .case-card {
+        padding: 1.5rem;
+    }
+
+    .comparison-container {
+        gap: 0.5rem;
     }
 }
